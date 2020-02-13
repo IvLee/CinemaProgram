@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+    <children>
+        <HBox prefHeight="35.0" prefWidth="600.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="TOP" prefHeight="37.0" prefWidth="109.0" styleClass="Label-Danfango" stylesheets="@style.css" text="Danfango" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="Charter Roman" size="21.0" />
+                    </font>
+                </Label>
+                <Region prefHeight="35.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="150.0" style="-fx-text-fill: orange;" styleClass="Administrator" stylesheets="@style.css" text="Administrator">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Region prefHeight="35.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#Public" prefHeight="27.0" prefWidth="101.0" text="Sign-Out">
+               <HBox.margin>
+                  <Insets bottom="5.0" right="10.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+        </HBox>
+        <HBox prefHeight="327.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TabPane prefHeight="327.0" prefWidth="603.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                    <tabs>
+                        <Tab text="Add Movies">
+                            <content>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <HBox prefHeight="40.0" prefWidth="600.0">
+                                            <children>
+                                                <TextField fx:id="movieTitleTextField" alignment="CENTER" prefHeight="25.0" prefWidth="331.0" promptText="Title" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </TextField>
+                                    <ComboBox fx:id="ratingComboBox" prefHeight="27.0" prefWidth="103.0" promptText="Rating">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <ComboBox fx:id="releaseTypeComboBox" layoutX="605.0" layoutY="20.0" prefHeight="27.0" prefWidth="116.0" promptText="Release Type">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </HBox.margin></ComboBox>
+                                    <Button mnemonicParsing="false" onAction="#movieApply" prefHeight="27.0" prefWidth="82.0" text="Add">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                            </children>
+                                        </HBox>
+                                        <HBox prefHeight="258.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <ListView fx:id="movieListView" prefHeight="251.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" right="10.0" />
+                                                    </HBox.margin>
+                                                </ListView>
+                                            </children>
+                                        </HBox>
+                              <HBox prefHeight="20.0" prefWidth="600.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#movieDelete" prefHeight="27.0" prefWidth="80.0" text="Delete">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Region prefHeight="27.0" prefWidth="456.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+                        <Tab text="Add Cinema">
+                            <content>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <HBox prefHeight="45.0" prefWidth="600.0">
+                                            <children>
+                                                <TextField fx:id="cinemaNameTextField" alignment="CENTER" prefHeight="27.0" prefWidth="233.0" promptText="Cinema" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </TextField>
+                                    <Label text="Address: ">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="15.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField alignment="CENTER" prefHeight="27.0" prefWidth="82.0" promptText="x" fx:id="xCoordinateTextField">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="yCoordinateTextField" alignment="CENTER" prefHeight="27.0" prefWidth="72.0" promptText="y">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#cinemaApply" prefHeight="27.0" prefWidth="87.0" text="Add">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                            </children>
+                                        </HBox>
+                              <HBox prefHeight="22.0" prefWidth="200.0" spacing="50.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Rating Restriction">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <RadioButton fx:id="All" mnemonicParsing="false" selected="true" text="All" />
+                                    <RadioButton fx:id="G" mnemonicParsing="false" text="G" />
+                                    <RadioButton fx:id="PG" mnemonicParsing="false" text="PG" />
+                                    <RadioButton fx:id="PG13" mnemonicParsing="false" text="PG-13" />
+                                    <RadioButton fx:id="R" mnemonicParsing="false" text="R" />
+                                    <RadioButton fx:id="NC17" mnemonicParsing="false" text="NC17" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="22.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <Label text="Release Type Restriction">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <RadioButton fx:id="AllBttn" mnemonicParsing="false" selected="true" text="All">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin></RadioButton>
+                                    <RadioButton fx:id="GeneralBttn" mnemonicParsing="false" text="General" />
+                                    <RadioButton fx:id="LimitedBttn" mnemonicParsing="false" text="Limited" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                                        <HBox prefHeight="255.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <ListView fx:id="cinemaListView" prefHeight="251.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" right="10.0" />
+                                                    </HBox.margin>
+                                                </ListView>
+                                            </children>
+                                        </HBox>
+                              <HBox prefHeight="20.0" prefWidth="600.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#cinemaDelete" prefHeight="27.0" prefWidth="80.0" text="Delete">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Region prefHeight="200.0" prefWidth="456.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                                    </children>
+                                </VBox>
+                            </content></Tab>
+                  <Tab text="Add Showtimes">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="45.0" prefWidth="600.0">
+                                 <children>
+                                    <ComboBox fx:id="moviesComboBox" prefHeight="27.0" prefWidth="199.0" promptText="Movie Title">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <ComboBox fx:id="cinemasComboBox" prefHeight="27.0" prefWidth="199.0" promptText="Cinema">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <ComboBox fx:id="hoursComboBox" prefHeight="27.0" prefWidth="100.0" promptText="Hours">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" right="5.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <ComboBox fx:id="minutesComboBox" prefHeight="27.0" prefWidth="100.0" promptText="Minutes">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" right="5.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <ComboBox fx:id="timePeriodComboBox" prefHeight="27.0" prefWidth="100.0" promptText="AM/PM">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" right="5.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <Button mnemonicParsing="false" onAction="#showtimeApply" prefWidth="60.0" text="Add">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="255.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ListView fx:id="showtimesListView" prefHeight="251.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </ListView>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="20.0" prefWidth="600.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#cinemaDelete" prefHeight="27.0" prefWidth="80.0" text="Delete">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Region prefHeight="200.0" prefWidth="456.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </HBox>
+        <HBox alignment="BOTTOM_CENTER" prefHeight="22.0" prefWidth="600.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="24.0" prefWidth="600.0" styleClass="Label-Danfango" stylesheets="@style.css" text="\@Danfango - The Other Fandango" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="Charter Roman" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</VBox>
